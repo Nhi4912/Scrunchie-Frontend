@@ -1,28 +1,31 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
-import { MatCardModule } from '@angular/material/card';
-import { MatTabsModule } from '@angular/material/tabs';
-import { MatInputModule } from '@angular/material/input';
+import { AppRoutingModule } from './app-routing.module';
+
+
+import { AuthModule } from 'src/app/modules/auth/auth.module';
+import { AuthLayoutComponent } from './layout/auth-layout/auth-layout.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AuthLayoutComponent
   ],
   imports: [
+    // angular
     BrowserModule,
+
+    // 3rd party
+    AuthModule,
+
+    // app
     AppRoutingModule,
-    MatCardModule,
-    MatTabsModule,
-    MatInputModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
-    MatIconModule
+
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
