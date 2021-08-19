@@ -24,7 +24,6 @@ const routes: Routes = [
       relativeLinkResolution: 'legacy'
     })
   ],
-  exports: [RouterModule],
-  providers: []
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }
