@@ -1,56 +1,58 @@
-<div class="auth-page auth-login-page">
-  <div class="auth-login-page login-content-container background-image">
-
-
+<div class="login-component-container">
+  <div class="login-sidebar-container">
   </div>
 
-  <div class="auth-login-page login-content-container login-form">
-    <div class="login-form-content-1">
-      <div class="form-1-container">
-        <p>Not a member?
-          <a>Sign up now</a>
-        </p>
-        <mat-icon>signup</mat-icon>
-      </div>
-    </div>
+  <div class="login-content-container">
+    <nav class="login-nav">
+      <p>Not a member?
+        <a href="https://getbootstrap.com/docs/3.4/css/">Sign up now</a>
+      </p>
+    </nav>
 
-    <div class="login-form-content-2">
-      <div class="login-form-with-gg">
-        <div class="gg-form-container">
-          <h2>Sign in with Scrunchie</h2>
-          <button mat-raised-button class='signup'>
-            Sign up with Google
-            <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in"
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
-
+    <main>
+      <div class="login-content-box">
+        <h2>Sign in to Scrunchie</h2>
+        <div class="login-connection-container">
+          <button mat-button class="gg-login-button">
+            <span>Login With Google</span>
+            <mat-icon class="gg-login-button-icon" svgIcon="logo"></mat-icon>
           </button>
-          <hr class='divider'>
+
+          <button mat-button class="fb-login-button">
+            <svg class="svg-icon" viewBox="0 0 20 20">
+              <path fill="none"
+                d="M11.344,5.71c0-0.73,0.074-1.122,1.199-1.122h1.502V1.871h-2.404c-2.886,0-3.903,1.36-3.903,3.646v1.765h-1.8V10h1.8v8.128h3.601V10h2.403l0.32-2.718h-2.724L11.344,5.71z">
+              </path>
+            </svg>
+          </button>
+        </div>
+        <hr class="divider" />
+        <div class="login-form-container">
+          <form class="login-form">
+            <mat-form-field class="login-form--email" appearance="fill">
+              <mat-label>Email</mat-label>
+              <input type="email" matInput placeholder="" value="">
+            </mat-form-field>
+            <mat-form-field class="login-form--password" appearance="fill">
+              <mat-label>Password</mat-label>
+              <input type="password" matInput placeholder="" value="">
+            </mat-form-field>
+            <div class='forgot-password'>
+              <a>
+                Forgot password?
+              </a>
+            </div>
+
+
+            <div class="login-form--button">
+              <button mat-flat-button color="primary">Login</button>
+            </div>
+
+
+          </form>
         </div>
       </div>
-      <div class="login-form-internal">
-        <form class="example-form">
-          <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Email</mat-label>
-            <input type="email" matInput placeholder="" value="">
-          </mat-form-field>
-          <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Password</mat-label>
-            <input type="password" matInput placeholder="" value="">
-          </mat-form-field>
-
-          <div class='forgot-password'>
-            <a>
-              Forgot password?
-            </a>
-          </div>
-        </form>
-
-
-
-        <div class="example-button-row">
-          <button mat-flat-button color="primary">Login</button>
-        </div>
-      </div>
-    </div>
+    </main>
   </div>
+
 </div>

@@ -1,1 +1,88 @@
-<p>register works!</p>
+<div class="register-component-container">
+  <div class="register-sidebar-container">
+  </div>
+
+  <div class="register-content-container">
+    <nav class="register-nav">
+      <p>Already a member?
+        <a href="https://getbootstrap.com/docs/3.4/css/">Sign in</a>
+      </p>
+    </nav>
+
+    <main>
+      <div class="register-content-box">
+        <h2>Sign up to Scrunchie</h2>
+        <div class="register-connection-container">
+          <button mat-button class="gg-register-button">
+            <span>Login With Google</span>
+            <mat-icon class="gg-register-button-icon" svgIcon="logo"></mat-icon>
+          </button>
+
+          <button mat-button class="fb-register-button">
+            <svg class="svg-icon" viewBox="0 0 20 20">
+              <path fill="none"
+                d="M11.344,5.71c0-0.73,0.074-1.122,1.199-1.122h1.502V1.871h-2.404c-2.886,0-3.903,1.36-3.903,3.646v1.765h-1.8V10h1.8v8.128h3.601V10h2.403l0.32-2.718h-2.724L11.344,5.71z">
+              </path>
+            </svg>
+          </button>
+        </div>
+        <hr class="divider" />
+        <div class="register-form-container">
+          <form class="register-form">
+            <table class="login-form-fullname" cellspacing="0">
+              <tr>
+                <td>
+                  <mat-form-field class="login-form--first-name" appearance="fill">
+                    <mat-label>First name</mat-label>
+                    <input matInput>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="login-form--last-name" appearance="fill">
+                    <mat-label>Last name</mat-label>
+                    <input matInput>
+                  </mat-form-field>
+                </td>
+              </tr>
+            </table>
+
+            <mat-form-field class="register-form--email" appearance="fill">
+              <mat-label>Email</mat-label>
+              <input type="email" matInput placeholder="" value="">
+            </mat-form-field>
+            <mat-form-field class="register-form--password" appearance="fill">
+              <mat-label>Password</mat-label>
+              <input type="password" matInput placeholder="" value="">
+            </mat-form-field>
+            <mat-form-field class="register-form--password" appearance="fill">
+              <mat-label>Re-Password</mat-label>
+              <input type="password" matInput placeholder="" value="">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>Date of Birth</mat-label>
+              <input matInput [matDatepicker]="picker">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+            <div class='register-form--checkbox'>
+              <mat-checkbox>
+                <div class='text-wrap'>Creating an account means you’re okay with our Terms of Service, Privacy
+                  Policy.</div>
+              </mat-checkbox>
+            </div>
+
+
+            <div class="register-form--button">
+              <button mat-flat-button color="primary">Register</button>
+            </div>
+
+
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+
+</div>

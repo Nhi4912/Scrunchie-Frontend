@@ -1,0 +1,169 @@
+.register-component-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.register-sidebar-container {
+  flex: 1;
+  background: url("../../../../../assets/images/register-background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  @media (max-width: 960px) {
+    display: none;
+  }
+}
+
+.register-content-container {
+  flex: 2;
+  display: flex;
+  justify-self: center;
+  flex-direction: column;
+
+  nav {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    padding: 10px 20px 0px 30px;
+    background-color: white;
+
+    p {
+      flex-flow: 1;
+      text-align: right;
+
+      a {
+        margin-right: 5px;
+        color: #4f3cc9;
+      }
+    }
+  }
+
+  main {
+    flex: 12;
+    padding: 100px 20% 100px 20%;
+    justify-content: center;
+    display: flex;
+
+    .register-content-box {
+      flex: 1;
+      min-width: 400px;
+      max-width: 400px;
+      display: flex;
+      flex-direction: column;
+
+      h2 {
+        font: "Helvetica Neue";
+        font-size: xx-large;
+      }
+
+      .register-connection-container {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+
+        .gg-register-button {
+          flex: 1;
+          height: 40px;
+          color: white;
+          background-color: #4285f4;
+          padding: 0px 20px 0px 20px;
+
+          span {
+            margin-right: 60px;
+            margin-left: 80px;
+            text-align: center;
+          }
+
+          .gg-register-button-icon {
+            background-color: white;
+            height: 90%;
+            width: 40px;
+            border-bottom-right-radius: 5px;
+            border-top-right-radius: 5px;
+            vertical-align: middle;
+          }
+        }
+
+        .fb-register-button {
+          margin-left: 20px;
+          height: 40px;
+          background-color: #475a96;
+        }
+      }
+
+      .divider {
+        width: 70%;
+        height: 0.03px;
+        flex: none;
+        background-color: #6e6d7a;
+        color: #6e6d7a;
+      }
+
+      .register-form-container {
+        flex: 7;
+        margin-top: 20px;
+        padding: 10px 0px 10px 0px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        .register-form {
+          flex: 1;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+
+          .register-form--email {
+            flex: 2;
+          }
+
+          .register-form--checkbox {
+            flex: 2;
+            max-width: 400px;
+            .text-wrap {
+              white-space: normal !important;
+            }
+          }
+
+          .forgot-password {
+            flex: 1;
+            text-align: right;
+          }
+
+          .register-form--button {
+            flex: 1;
+            display: flex;
+            padding: 0px 30% 0px 30%;
+            flex-direction: row;
+            justify-content: center;
+
+            button {
+              background-color: #e39e7d;
+              font-size: medium;
+              flex: 1;
+              height: 40px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.svg-icon {
+  width: 2em;
+  height: 2em;
+}
+
+.svg-icon path,
+.svg-icon polygon,
+.svg-icon rect {
+  fill: white;
+}
+
+.svg-icon circle {
+  stroke: white;
+  stroke-width: 1;
+}

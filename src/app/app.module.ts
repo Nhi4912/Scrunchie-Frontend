@@ -9,6 +9,8 @@ import { AuthModule } from '../app/modules/auth/auth.module';
 import { AuthLayoutComponent } from './layout/auth-layout/auth-layout.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -18,13 +20,11 @@ import { MaterialModule } from './material.module';
   ],
   imports: [
     BrowserModule,
-    // angular
-    // 3rd party
     AuthModule,
     MaterialModule,
-    // app
     AppRoutingModule,
-
+    HttpClientModule,
+    FormsModule,
     BrowserAnimationsModule
   ],
   providers: [],
