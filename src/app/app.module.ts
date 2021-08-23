@@ -10,7 +10,11 @@ import { AuthLayoutComponent } from './layout/auth-layout/auth-layout.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ErrorStateMatcher } from '@angular/material/core';
+import { TouchedErrorStateMatcher } from './modules/auth/page/login/login.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { CommonModule } from "@angular/common";
 
 
 @NgModule({
@@ -19,15 +23,20 @@ import { FormsModule } from '@angular/forms';
     AuthLayoutComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AuthModule,
     MaterialModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    { provide: ErrorStateMatcher, useClass: TouchedErrorStateMatcher }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

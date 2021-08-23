@@ -122,6 +122,9 @@
           .register-form--checkbox {
             flex: 2;
             max-width: 400px;
+            mat-checkbox {
+              color: primary;
+            }
             .text-wrap {
               white-space: normal !important;
             }

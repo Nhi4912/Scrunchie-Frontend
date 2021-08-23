@@ -42,7 +42,7 @@
 
   main {
     flex: 12;
-    padding: 150px 20% 300px 20%;
+    padding: 150px 20% 250px 20%;
     justify-content: center;
     display: flex;
 
@@ -102,7 +102,7 @@
       }
 
       .login-form-container {
-        flex: 5;
+        flex: 7;
         margin-top: 20px;
         padding: 10px 0px 10px 0px;
         width: 100%;
@@ -116,11 +116,11 @@
           flex-direction: column;
 
           .login-form--email {
-            flex: 2;
+            flex: 4;
           }
 
           .login-form--password {
-            flex: 2;
+            flex: 4;
           }
 
           .forgot-password {
