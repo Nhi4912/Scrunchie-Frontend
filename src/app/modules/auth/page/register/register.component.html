@@ -28,13 +28,19 @@
         </div>
         <hr class="divider" />
         <div class="register-form-container">
-          <form class="register-form">
+          <form class="register-form" [formGroup]="form">
             <table class="login-form-fullname" cellspacing="0">
               <tr>
                 <td>
                   <mat-form-field class="login-form--first-name" appearance="fill">
                     <mat-label>First name</mat-label>
-                    <input matInput>
+                    <input formControlName="firstName" matInput>
+                    <mat-error *ngFor="let validation of REGISTER_VALIDATION_MESSAGE.firstName">
+                      <mat-error class="error-message" *ngIf="f.firstName.hasError(validation.type)
+                                                && (f.firstName.dirty || f.firstName.touched)">
+                        {{validation.message}}
+                      </mat-error>
+                    </mat-error>
                   </mat-form-field>
                 </td>
                 <td>
@@ -50,12 +56,13 @@
               <mat-label>Email</mat-label>
               <input type="email" matInput placeholder="" value="">
             </mat-form-field>
+
             <mat-form-field class="register-form--password" appearance="fill">
               <mat-label>Password</mat-label>
               <input type="password" matInput placeholder="" value="">
             </mat-form-field>
             <mat-form-field class="register-form--password" appearance="fill">
-              <mat-label>Re-Password</mat-label>
+              <mat-label>Confirm Password</mat-label>
               <input type="password" matInput placeholder="" value="">
             </mat-form-field>
 

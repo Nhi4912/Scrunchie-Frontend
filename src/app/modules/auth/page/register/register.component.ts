@@ -1,5 +1,7 @@
+import { REGISTER_VALIDATION_MESSAGE } from './constant';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { MustMatch } from 'src/app/helper/must-match';
 
 @Component({
   selector: 'app-register',
@@ -7,7 +9,64 @@ import { FormBuilder, FormControl } from '@angular/forms';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-  constructor() { }
+  public REGISTER_VALIDATION_MESSAGE = REGISTER_VALIDATION_MESSAGE;
+  form: FormGroup;
 
-  ngOnInit(): void { }
+  constructor(private formBuilder: FormBuilder) { }
+
+  ngOnInit(): void {
+    this.initializeForm();
+  }
+
+  get f() {
+    return this.form.controls;
+  }
+  public initializeForm(): void {
+    this.form = this.formBuilder.group({
+      email: [
+        '',
+        Validators.compose(
+          [
+            Validators.required,
+            Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
+          ]
+        )],
+      firstName: [
+        '',
+        Validators.compose(
+          [
+            Validators.maxLength(20),
+            Validators.minLength(6),
+            Validators.pattern('^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]+$'),
+            Validators.required
+          ])],
+      lastName: [
+        '',
+        Validators.compose(
+          [
+            Validators.maxLength(20),
+            Validators.minLength(6),
+            Validators.pattern('^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]+$'),
+            Validators.required
+          ])],
+      password: [
+        '',
+        Validators.compose(
+          [
+            Validators.minLength(6),
+            Validators.required,
+            Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$') //this is for the letters (both uppercase and lowercase) and numbers validation
+          ])],
+      confirmPassword: [
+        '',
+        Validators.compose(
+          [
+            Validators.minLength(6),
+            Validators.required,
+            Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$') //this is for the letters (both uppercase and lowercase) and numbers validation
+          ])]
+    }, {
+      validator: MustMatch('password', 'confirmPassword')
+    });
+  }
 }
