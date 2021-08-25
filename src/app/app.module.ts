@@ -15,6 +15,8 @@ import { ErrorStateMatcher } from '@angular/material/core';
 import { TouchedErrorStateMatcher } from './modules/auth/page/login/login.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { CommonModule } from '@angular/common';
+import { SocialLoginModule } from 'angularx-social-login';
+import { SocialLoginConfig } from './configs/social-login.config';
 
 
 @NgModule({
@@ -23,6 +25,7 @@ import { CommonModule } from '@angular/common';
     AuthLayoutComponent
   ],
   imports: [
+    SocialLoginModule,
     CommonModule,
     BrowserModule,
     AuthModule,
@@ -35,6 +38,7 @@ import { CommonModule } from '@angular/common';
     BrowserAnimationsModule
   ],
   providers: [
+    SocialLoginConfig,
     { provide: ErrorStateMatcher, useClass: TouchedErrorStateMatcher }
   ],
   bootstrap: [AppComponent]

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
+import { GoogleLoginProvider, SocialAuthService } from 'angularx-social-login';
 
 export class TouchedErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -14,6 +15,8 @@ export class TouchedErrorStateMatcher implements ErrorStateMatcher {
 })
 export class LoginComponent implements OnInit {
   form: FormGroup;
+  private isLogin: Boolean = false;
+  private isLoading: Boolean = false;
   public matcher = new TouchedErrorStateMatcher();
 
   public readonly ACCOUNT_VALIDATION_MESSAGE = {
@@ -30,7 +33,8 @@ export class LoginComponent implements OnInit {
   get f() { return this.form.controls; }
 
   constructor(
-    private readonly formBuilder: FormBuilder
+    private readonly formBuilder: FormBuilder,
+    private socialAuthService: SocialAuthService,
   ) { }
 
   ngOnInit(): void {
@@ -56,5 +60,21 @@ export class LoginComponent implements OnInit {
             Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$')
           ])]
     });
+  }
+
+  loginWithGoogle(): void {
+    this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID).then((googleUser: any) => {
+      console.log(googleUser)
+      // this.authService.socialLogin({ idToken: googleUser.idToken })
+      //   .pipe(first())
+      //   .subscribe({
+      //     next: () => {
+      //       this.isLogin = true;
+      //     },
+      //     error: error => {
+      //       this.isLoading = false;
+      //     }
+      //   });
+    })
   }
 }

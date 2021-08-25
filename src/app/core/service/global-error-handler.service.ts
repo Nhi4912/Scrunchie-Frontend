@@ -7,6 +7,6 @@ export class GlobalErrorHandlerService implements ErrorHandler {
   }
 
   handleError(error: Error | HttpErrorResponse): void {
-    console.log('GlobalErrorHandlerService');
+    console.log('GlobalErrorHandlerService', error);
   }
 }
