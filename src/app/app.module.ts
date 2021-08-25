@@ -14,7 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { TouchedErrorStateMatcher } from './modules/auth/page/login/login.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { CommonModule } from "@angular/common";
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({

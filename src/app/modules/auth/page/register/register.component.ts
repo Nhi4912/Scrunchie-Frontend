@@ -1,6 +1,6 @@
 import { REGISTER_VALIDATION_MESSAGE } from './constant';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MustMatch } from 'src/app/helper/must-match';
 
 @Component({
@@ -55,7 +55,7 @@ export class RegisterComponent implements OnInit {
           [
             Validators.minLength(6),
             Validators.required,
-            Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$') //this is for the letters (both uppercase and lowercase) and numbers validation
+            Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$')
           ])],
       confirmPassword: [
         '',
@@ -63,7 +63,7 @@ export class RegisterComponent implements OnInit {
           [
             Validators.minLength(6),
             Validators.required,
-            Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$') //this is for the letters (both uppercase and lowercase) and numbers validation
+            Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$')
           ])]
     }, {
       validator: MustMatch('password', 'confirmPassword')

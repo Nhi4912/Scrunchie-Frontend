@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
       { type: 'minlength', message: 'Password must be at least 5 characters long' },
       { type: 'pattern', message: 'Your password must contain uppercase, lowercase and number' }
     ]
-  }
+  };
   get f() { return this.form.controls; }
 
   constructor(
