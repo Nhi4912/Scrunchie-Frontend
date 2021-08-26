@@ -1,3 +1,5 @@
+import { DashboardLayoutComponent } from './layout/dashboard-layout/dashboard-layout.component';
+import { DashboardModule } from './modules/dashboard/dashboard.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -18,17 +20,18 @@ import { CommonModule } from '@angular/common';
 import { SocialLoginModule } from 'angularx-social-login';
 import { SocialLoginConfig } from './configs/social-login.config';
 
-
 @NgModule({
   declarations: [
     AppComponent,
-    AuthLayoutComponent
+    AuthLayoutComponent,
+    DashboardLayoutComponent
   ],
   imports: [
     SocialLoginModule,
     CommonModule,
     BrowserModule,
     AuthModule,
+    DashboardModule,
     MaterialModule,
     AppRoutingModule,
     HttpClientModule,

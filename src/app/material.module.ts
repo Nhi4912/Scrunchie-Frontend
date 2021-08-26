@@ -19,6 +19,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { CdkAccordionModule } from '@angular/cdk/accordion';
 
 @NgModule({
   declarations: [],
@@ -41,7 +43,9 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     MatSlideToggleModule,
     MatDividerModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatExpansionModule,
+    CdkAccordionModule
   ],
   exports: [
     MatButtonModule,
@@ -62,7 +66,9 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     MatSlideToggleModule,
     MatDividerModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatExpansionModule,
+    CdkAccordionModule
   ]
 })
 export class MaterialModule { }
