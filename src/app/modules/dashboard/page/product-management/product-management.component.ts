@@ -8,8 +8,8 @@ import { FormControl } from '@angular/forms';
 })
 export class ProductManagementComponent implements OnInit {
   panelOpenState = false;
-  genderList = ['Male', 'Female']
-  gender: string = 'Male';
+  genderList = ['Male', 'Female'];
+  gender = 'Male';
   selectGenderControl = new FormControl(this.gender);
 
   constructor() { }

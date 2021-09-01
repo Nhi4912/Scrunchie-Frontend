@@ -64,7 +64,7 @@ export class LoginComponent implements OnInit {
 
   loginWithGoogle(): void {
     this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID).then((googleUser: any) => {
-      console.log(googleUser)
+      console.log(googleUser);
       // this.authService.socialLogin({ idToken: googleUser.idToken })
       //   .pipe(first())
       //   .subscribe({
@@ -75,6 +75,6 @@ export class LoginComponent implements OnInit {
       //       this.isLoading = false;
       //     }
       //   });
-    })
+    });
   }
 }
